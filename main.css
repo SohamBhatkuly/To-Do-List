@@ -1,0 +1,82 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.add-button {
+  display: flex;
+  justify-content: end;
+  width: 100vw;
+  padding-right: 4rem;
+  margin-top: 3rem;
+}
+
+.bi-plus-lg {
+  color: #4056a1;
+  font-size: 1.9rem;
+}
+
+.add {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 2rem;
+  border: none;
+  background-color: #c5cbe3;
+}
+/* main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} */
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* display: none; */
+  /* display: flex; */
+  /* flex-direction: column; */
+  width: 40vw;
+  border: 1px solid black;
+  height: 60vh;
+}
+
+.bi-x-lg {
+  color: red;
+}
+
+.display-modal {
+  display: flex;
+  flex-direction: column;
+}
+.close {
+  align-self: flex-end;
+  width: 3.8rem;
+  margin-bottom: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  width: 100%;
+}
+
+.title {
+  margin-top: 3px;
+  gap: 1rem;
+  display: flex;
+}
+
+.title input[type="text"] {
+  flex: 1;
+  margin-right: 2px;
+}
+h4 {
+  font-style: normal;
+  font-weight: normal;
+}
