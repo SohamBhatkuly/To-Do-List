@@ -2,6 +2,8 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 .add-button {
@@ -53,6 +55,7 @@
   display: flex;
   flex-direction: column;
 }
+
 .close {
   align-self: flex-end;
   width: 3.8rem;
@@ -62,8 +65,9 @@
 .form {
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 100%;
+  gap: 2rem;
 }
 
 .title {
@@ -75,8 +79,43 @@
 .title input[type="text"] {
   flex: 1;
   margin-right: 2px;
+  margin-left: 3rem;
+  outline: none;
+  text-indent: 3px;
 }
+
 h4 {
   font-style: normal;
   font-weight: normal;
+}
+
+.description {
+  display: flex;
+}
+
+.description textarea {
+  margin-left: 1.2rem;
+  flex: 1;
+  margin-right: 2px;
+  height: 8rem;
+  cursor: text;
+  outline: none;
+  text-indent: 3px;
+  resize: none;
+}
+
+.date {
+  display: flex;
+  gap: 4rem;
+}
+
+.save {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 3rem;
+}
+.save-button {
+  width: 4rem;
+  height: 2rem;
 }
