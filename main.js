@@ -2,8 +2,8 @@ let addModal = document.querySelector('.add');
 let modal = document.querySelector('.modal');
 let closeModal = document.querySelector('.close');
 // console.log(modal)
-
-
+let tasks = JSON.parse(localStorage.getItem("data")) || [];
+console.log(tasks);
 let saveButton = document.querySelector('.save-button');
 saveButton.addEventListener('click', () => {
     addTasks();
@@ -12,30 +12,45 @@ saveButton.addEventListener('click', () => {
 })
 
 
+display();
 function display() {
     console.log(tasks);
     let taskDisplay = document.querySelector('.tasks');
     taskDisplay.style.display = "grid";
-    taskDisplay.style.gridTemplateColumns = "repeat(4, 1fr)";
+    taskDisplay.style.gridTemplateColumns = "repeat(5, 1fr)";
     taskDisplay.style.padding = "1rem";
     // taskDisplay.style.border = "1px solid black";
     taskDisplay.style.height = "4rem";
     taskDisplay.innerHTML = ``;
     tasks.forEach((x) => {
         let { title, description, taskDate } = x;
+        taskDate = new Date(taskDate);
+        let dt = taskDate.toDateString();
+        let tm = taskDate.toTimeString();
+        tm = tm.split(" ");
+
         let entry = document.createElement('div');
+        entry.style.height = "150px";
+        // entry.style.overflow = "auto";
+        entry.style.display = "flex";
+        entry.style.paddingBottom = "1rem";
+   
+
         entry.innerHTML = `
         <div class="tiles">
             <div class="tile-title">${title}</div>
-            <div class="tile-description">${description}</div>
-            <div class="tile-date">${taskDate}</div>
+
+            <div class="tile-date">${dt}</div>
+
+               <div class="tile-time">${tm[0]}</div>
         </div>
         `;
         taskDisplay.appendChild(entry);
     });
 }
 
-let tasks = [];
+
+
 function addTasks() {
     let title = document.querySelector('.title-value').value;
     let description = document.querySelector('.description-text').value;
@@ -43,11 +58,12 @@ function addTasks() {
     let date = datetime.split(" ");
     let [year, month, day] = date[0].split("-");
     let [hours, minuites] = date[1].split(":");
-    let taskDate = new Date(year, month, day, hours, minuites);
+    let taskDate = new Date(year, month-1, day, hours, minuites);
     let task = {
         title, description, taskDate
     };
     tasks.push(task);
+    localStorage.setItem("data", JSON.stringify(tasks));
 }
 
 
@@ -68,3 +84,4 @@ flatpickr("input[type=datetime-local", {
     dateFormat: "Y-m-d H:i",
     minDate: "today",
 });
+
