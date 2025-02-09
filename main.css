@@ -109,12 +109,13 @@ body {
   color: #fefefe;
 }
 
-.display-modal {
+.display-modal, .popup-Modal {
   display: flex;
   flex-direction: column;
 }
 
-.close {
+.close,
+.close-popup {
   border-radius: 4px;
   /* margin-top: 2px;
   margin-right: 1px; */
@@ -217,4 +218,20 @@ h4 {
   margin-left: 11rem;
   margin-bottom: 4rem;
   color: #ff3d3f;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  /* display: none; */
+  /* display: flex; */
+  /* flex-direction: column; */
+  width: 40vw;
+  border: 1px solid #d24110;
+  border-radius: 6px;
+  height: 60vh;
 }
