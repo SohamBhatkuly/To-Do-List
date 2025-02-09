@@ -1,7 +1,6 @@
 let addModal = document.querySelector('.add');
 let modal = document.querySelector('.modal');
 let closeModal = document.querySelector('.close');
-// console.log(modal)
 let tasks = JSON.parse(localStorage.getItem("data")) || [];
 let closePopup = document.querySelector('.close-popup')
 let body = document.querySelector('body');
@@ -64,7 +63,6 @@ flatpickr("input[type=datetime-local", {
     enableTime: true,
     dateFormat: "Y-m-d H:i",
     minDate: "today",
-
 // onOpen: () => {
 //   document.body.classList.add("no-scroll");
 // },
@@ -89,11 +87,12 @@ const detail = document.querySelector('.details');
             <div class="popup-date">${date}</div>
             <div class="popup-time">${time}</div>
             <div class="popup-description">${description}</div>
+        <div class="delete">
+                <i class="bi bi-trash3"></i>
+        </div>
     `;
 
 }
-
-
 
 function display() {
     console.log(tasks);
