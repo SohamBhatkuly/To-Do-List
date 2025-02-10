@@ -8,7 +8,14 @@ let tiles = document.querySelector('.tiles')
 let popup = document.querySelector('.popup');
     let taskDisplay = document.querySelector('.tasks');
 
-
+function deleteTask(id) {
+    // console.log(id)
+    console.log(tasks instanceof Array);
+    tasks = tasks.filter(x => x.id != id);
+    console.log(tasks);
+    localStorage.setItem("data", JSON.stringify(tasks));
+    closePopup.dispatchEvent(new Event("click"));
+}
 
 
 display();
@@ -19,27 +26,23 @@ saveButton.addEventListener('click', () => {
     modal.style.display = 'none';
       document.body.style.position = '';
     document.body.style.width = '';
-    //    document.body.style.overflowY = "auto";
+
     display();
 })
 
 
-function popupDisplay(title, date, time, description){
+function popupDisplay(title, date, time, description, id){
     popup.style.display = 'block';
-    //   document.body.style.position = "fixed";
-    // document.body.style.width = `100%`;
 
     requestAnimationFrame(() => {
-        displayPopup(title, date, time, description);
+        displayPopup(title, date, time, description, id);
     });
 
 }
 
 closePopup.addEventListener('click', () => {
     popup.style.display = 'none';
-    //       document.body.style.position = '';
-    // document.body.style.width = '';
-    // document.body.style.overflowY = "auto";
+    display();
 })
 
 
@@ -47,15 +50,12 @@ addModal.addEventListener('click', () => {
     modal.style.display = 'block';
     document.body.style.position = "fixed";
     document.body.style.width = `100%`;
-    // const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-    // document.body.style.paddingRight=`${scrollbarWidth}px`
 })
 
 closeModal.addEventListener('click', () => {
     modal.style.display = 'none';
       document.body.style.position = '';
     document.body.style.width = '';
-    //   document.body.style.overflowY = "auto";
 })
 
 
@@ -63,31 +63,19 @@ flatpickr("input[type=datetime-local", {
     enableTime: true,
     dateFormat: "Y-m-d H:i",
     minDate: "today",
-// onOpen: () => {
-//   document.body.classList.add("no-scroll");
-// },
-
-// onClose: () => {
-//   document.body.classList.remove("no-scroll");
-    // }
-    // onValueUpdate: function (selectedDates, dateStr, instance) {
-
-    // }
 
 });
 
+function displayPopup(title, date, time, description, id) {
 
-
-function displayPopup(title, date, time, description) {
    title =  title.charAt(0).toUpperCase() + title.slice(1);
 const detail = document.querySelector('.details');
     detail.innerHTML = `
-  
         <div class="popup-title">${title}</div>
             <div class="popup-date">${date}</div>
             <div class="popup-time">${time}</div>
-            <div class="popup-description">${description}</div>
-        <div class="delete">
+            <div class="popup-description"><p>${description}</p></div>
+        <div class="delete" onclick="deleteTask('${id}')">
                 <i class="bi bi-trash3"></i>
         </div>
     `;
@@ -95,21 +83,19 @@ const detail = document.querySelector('.details');
 }
 
 function display() {
-    console.log(tasks);
-    
-    tasks.sort((a, b) => {
-        let d1 = new Date(a.taskDate);
-        let d2 = new Date(b.taskDate);
-        return d1 - d2;
-    })
-    // console.log(tasks);
+    if (tasks) {
+        tasks.sort((a, b) => {
+            let d1 = new Date(a.taskDate);
+            let d2 = new Date(b.taskDate);
+            return d1 - d2;
+        })
+    }
         let fragment = document.createDocumentFragment();
 
     taskDisplay.style.display = "grid";
     taskDisplay.style.gap = "2rem";
     taskDisplay.style.gridTemplateColumns = "repeat(5, 1fr)";
     taskDisplay.style.padding = "2rem";
-    // taskDisplay.style.border = "1px solid black";
     taskDisplay.style.height = "4rem";
     taskDisplay.innerHTML = ``;
     tasks.forEach((x) => {
@@ -120,13 +106,13 @@ function display() {
         tm = tm.split(" ");
         let entry = document.createElement('div');
         entry.style.height = "150px";
-        // entry.style.overflow = "auto";
+
         entry.style.display = "flex";
         entry.style.paddingBottom = "1rem";
 
 
         entry.innerHTML = `
-        <div class="tiles"  onclick="popupDisplay('${title}', '${dt}', '${tm[0]}', '${description}')"">
+        <div class="tiles" onclick="popupDisplay('${title}', '${dt}', '${tm[0]}', '${description}', '${id}')">
             <div class="tile-title">${title}</div>
 
             <div class="tile-date">${dt}</div>
@@ -146,7 +132,8 @@ function display() {
 
 function addTasks() {
     let title = document.querySelector('.title-value').value;
-    let description = document.querySelector('.description-text').value;
+ let description = document.querySelector('.description-text').value.replace(/\n/g, " ");;
+
     let datetime = document.querySelector('.date-time').value;
     let id = crypto.randomUUID();
     let date = datetime.split(" ");
