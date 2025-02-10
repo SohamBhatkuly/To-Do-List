@@ -164,7 +164,7 @@ body {
   margin-top: 3px;
   gap: 1rem;
   display: flex;
-  color: #ff3d3f;
+  /* color: #ff3d3f; */
 }
 
 .title input[type="text"] {
@@ -172,7 +172,7 @@ body {
   margin-right: 2px;
   margin-left: 3rem;
   outline: none;
-  color: #ff3d3f;
+  /* color: #ff3d3f; */
   text-indent: 3px;
   outline: none;
   border: 1px solid #ff3d3f;
@@ -182,7 +182,7 @@ body {
 h4 {
   font-style: normal;
   font-weight: normal;
-  color: #ff3d3f;
+  /* color: #ff3d3f; */
 }
 
 .description {
@@ -195,7 +195,7 @@ h4 {
   flex: 1;
   margin-right: 2px;
   height: 3rem;
-  color: #ff3d3f;
+  /* color: #ff3d3f; */
   outline: none;
   text-indent: 3px;
   resize: none;
@@ -208,7 +208,7 @@ h4 {
 
 .date {
   display: flex;
-  color: #ff3d3f;
+  /* color: #ff3d3f; */
   gap: 4rem;
 }
 
@@ -216,6 +216,7 @@ h4 {
   outline: none;
   border: 1px solid #ff3d3f;
   border-radius: 0.4rem;
+  /* color: #ff3d3f; */
 }
 .save {
   position: relative;
@@ -243,7 +244,7 @@ h4 {
 
 .tiles {
   border: 0.001px solid #fccea3;
-  color: #ff3d3f;
+  /* color: #ff3d3f; */
   border-radius: 5px;
   padding: 0.5rem;
   background-color: #fff;
@@ -287,7 +288,7 @@ h4 {
   align-self: center;
   font-size: 1.5rem;
   font-weight: 200;
-  color: #ff3d3f;
+  /* color: #ff3d3f; */
   height: auto;
   flex-wrap: wrap;
 }
@@ -323,7 +324,7 @@ h4 {
 .popup-date,
 .popup-time,
 .popup-description {
-  color: #ff3d3f;
+  /* color: #ff3d3f; */
   height: fit-content;
   width: 100%;
   /* border: 1px solid black; */
