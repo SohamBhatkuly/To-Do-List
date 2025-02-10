@@ -19,7 +19,7 @@
   font-size: 1.9rem;
 }
 body {
-  background-color: #fff;
+  background-color: #e5f0ff;
 }
 
 .add {
@@ -27,8 +27,9 @@ body {
   height: 3rem;
   border-radius: 2rem;
   border: none;
-  background-color: #ff3d3f;
+  background-color: #97aae0;
 }
+
 /* main {
   display: flex;
   flex-direction: column;s
@@ -36,18 +37,21 @@ body {
   align-items: center;
 } */
 
+main {
+  background-color: #e5f0ff;
+}
 .modal {
+  background-color: white;
   display: none;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #fff;
   /* display: none; */
   /* display: flex; */
   /* flex-direction: column; */
   width: 40vw;
-  border: 1px solid #d24110;
+  border: 1px solid #6b7698;
   border-radius: 6px;
   height: 60vh;
 }
@@ -147,7 +151,7 @@ body {
 
 body {
   overflow-x: hidden;
-  background-color: #fff;
+  background-color: #e5f0ff;
 }
 
 .form {
@@ -163,8 +167,9 @@ body {
 .title {
   margin-top: 3px;
   gap: 1rem;
+  font-size: large;
   display: flex;
-  /* color: #ff3d3f; */
+  color: #6b7698;
 }
 
 .title input[type="text"] {
@@ -172,21 +177,22 @@ body {
   margin-right: 2px;
   margin-left: 3rem;
   outline: none;
-  /* color: #ff3d3f; */
+  color: #6b7698;
   text-indent: 3px;
   outline: none;
-  border: 1px solid #ff3d3f;
+  border: 1px solid #6b7698;
   border-radius: 0.4rem;
 }
 
 h4 {
   font-style: normal;
   font-weight: normal;
-  /* color: #ff3d3f; */
+  color: #6b7698;
 }
 
 .description {
   display: flex;
+  font-size: large;
 }
 
 .description textarea {
@@ -195,28 +201,29 @@ h4 {
   flex: 1;
   margin-right: 2px;
   height: 3rem;
-  /* color: #ff3d3f; */
+  color: #6b7698;
   outline: none;
   text-indent: 3px;
   resize: none;
   overflow-y: auto;
   overflow-x: hidden;
   outline: none;
-  border: 1px solid #ff3d3f;
+  border: 1px solid #6b7698;
   border-radius: 0.4rem;
 }
 
 .date {
   display: flex;
-  /* color: #ff3d3f; */
+  color: #6b7698;
   gap: 4rem;
+  font-size: large;
 }
 
 .date-time {
   outline: none;
-  border: 1px solid #ff3d3f;
+  border: 1px solid #6b7698;
   border-radius: 0.4rem;
-  /* color: #ff3d3f; */
+  color: #6b7698;
 }
 .save {
   position: relative;
@@ -243,8 +250,9 @@ h4 {
 }
 
 .tiles {
-  border: 0.001px solid #fccea3;
-  /* color: #ff3d3f; */
+  font-size: large;
+  border: 0.001px solid #6b7698;
+  color: #6b7698;
   border-radius: 5px;
   padding: 0.5rem;
   background-color: #fff;
@@ -259,10 +267,21 @@ h4 {
   margin-right: 8rem;
 }
 
+header {
+  padding: 0;
+  margin: 0;
+}
+
 .heading {
-  margin-left: 11rem;
-  margin-bottom: 4rem;
-  color: #ff3d3f;
+  /* margin-left: 11rem;
+  margin-bottom: 4rem; */
+  background-color: #97aae0;
+  color: #fff;
+  display: flex;
+  height: 5rem;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
 }
 
 .popup {
@@ -276,7 +295,7 @@ h4 {
   /* display: flex; */
   /* flex-direction: column; */
   width: 40vw;
-  border: 1px solid #d24110;
+  border: 1px solid #6b7698;
   border-radius: 6px;
   height: max-content;
   padding-bottom: 1rem;
@@ -288,7 +307,7 @@ h4 {
   align-self: center;
   font-size: 1.5rem;
   font-weight: 200;
-  /* color: #ff3d3f; */
+  color: #6b7698;
   height: auto;
   flex-wrap: wrap;
 }
@@ -324,7 +343,7 @@ h4 {
 .popup-date,
 .popup-time,
 .popup-description {
-  /* color: #ff3d3f; */
+  color: #6b7698;
   height: fit-content;
   width: 100%;
   /* border: 1px solid black; */
