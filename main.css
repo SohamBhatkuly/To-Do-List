@@ -7,11 +7,12 @@
 }
 
 .add-button {
+  padding-top: 2rem;
   display: flex;
   justify-content: end;
   width: 100vw;
   padding-right: 4rem;
-  margin-top: 3rem;
+  /* margin-top: 3rem; */
 }
 
 .bi-plus-lg {
@@ -19,27 +20,30 @@
   font-size: 1.9rem;
 }
 body {
-  background-color: #e5f0ff;
+  background-color: #eaeaea;
+  background-image: url("./images/4212138.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  background-attachment: fixed;
 }
 
+.bgim {
+  margin-top: 0;
+  padding-top: 0;
+}
 .add {
   width: 3rem;
   height: 3rem;
   border-radius: 2rem;
   border: none;
-  background-color: #97aae0;
+  background-color: #4a90e2;
 }
 
 /* main {
-  display: flex;
-  flex-direction: column;s
-  justify-content: center;
-  align-items: center;
+  background-color: #EAEAEA;
 } */
-
-main {
-  background-color: #e5f0ff;
-}
 .modal {
   background-color: white;
   display: none;
@@ -51,7 +55,7 @@ main {
   /* display: flex; */
   /* flex-direction: column; */
   width: 40vw;
-  border: 1px solid #6b7698;
+  border: 1px solid #c0c0c0;
   border-radius: 6px;
   height: 60vh;
 }
@@ -150,8 +154,9 @@ main {
 }
 
 body {
+  overflow-y: scroll;
   overflow-x: hidden;
-  background-color: #e5f0ff;
+  /* background-color: #e5f0ff; */
 }
 
 .form {
@@ -165,11 +170,11 @@ body {
 }
 
 .title {
-  margin-top: 3px;
+  /* margin-top: 3px; */
   gap: 1rem;
-  font-size: large;
+  font-size: 600;
   display: flex;
-  color: #6b7698;
+  color: #333;
 }
 
 .title input[type="text"] {
@@ -177,22 +182,22 @@ body {
   margin-right: 2px;
   margin-left: 3rem;
   outline: none;
-  color: #6b7698;
+  color: #333;
   text-indent: 3px;
   outline: none;
-  border: 1px solid #6b7698;
+  border: 1px solid #c0c0c0;
   border-radius: 0.4rem;
 }
 
 h4 {
   font-style: normal;
   font-weight: normal;
-  color: #6b7698;
+  color: #333;
 }
 
 .description {
   display: flex;
-  font-size: large;
+  font-size: 600;
 }
 
 .description textarea {
@@ -201,29 +206,29 @@ h4 {
   flex: 1;
   margin-right: 2px;
   height: 3rem;
-  color: #6b7698;
+  color: #333;
   outline: none;
   text-indent: 3px;
   resize: none;
   overflow-y: auto;
   overflow-x: hidden;
   outline: none;
-  border: 1px solid #6b7698;
+  border: 1px solid #c0c0c0;
   border-radius: 0.4rem;
 }
 
 .date {
   display: flex;
-  color: #6b7698;
+  color: #333;
   gap: 4rem;
-  font-size: large;
+  font-size: 600;
 }
 
 .date-time {
   outline: none;
-  border: 1px solid #6b7698;
+  border: 1px solid #c0c0c0;
   border-radius: 0.4rem;
-  color: #6b7698;
+  color: #333;
 }
 .save {
   position: relative;
@@ -231,7 +236,7 @@ h4 {
   width: 100%;
   justify-content: center;
   margin-top: 2rem;
-  color: #ff3d3f;
+  color: #4a90e2;
 }
 .save-button {
   width: 4rem;
@@ -240,19 +245,19 @@ h4 {
   border: none;
   border-radius: 0.4rem;
   align-self: center;
-  color: #ff3d3f;
+  color: #4a90e2;
   background-color: #fefefe;
 }
 
 .save-button:hover {
-  background-color: #ff3d3f;
+  background-color: #4a90e2;
   color: #fefefe;
 }
 
 .tiles {
-  font-size: large;
-  border: 0.001px solid #6b7698;
-  color: #6b7698;
+  font-size: 600;
+  border: 0.001px solid #c0c0c0;
+  color: #333;
   border-radius: 5px;
   padding: 0.5rem;
   background-color: #fff;
@@ -275,8 +280,8 @@ header {
 .heading {
   /* margin-left: 11rem;
   margin-bottom: 4rem; */
-  background-color: #97aae0;
-  color: #fff;
+  background-color: #4a90e2;
+  color: #333;
   display: flex;
   height: 5rem;
   width: 100vw;
@@ -295,7 +300,7 @@ header {
   /* display: flex; */
   /* flex-direction: column; */
   width: 40vw;
-  border: 1px solid #6b7698;
+  border: 1px solid #c0c0c0;
   border-radius: 6px;
   height: max-content;
   padding-bottom: 1rem;
@@ -307,7 +312,7 @@ header {
   align-self: center;
   font-size: 1.5rem;
   font-weight: 200;
-  color: #6b7698;
+  color: #333;
   height: auto;
   flex-wrap: wrap;
 }
@@ -343,7 +348,7 @@ header {
 .popup-date,
 .popup-time,
 .popup-description {
-  color: #6b7698;
+  color: #333;
   height: fit-content;
   width: 100%;
   /* border: 1px solid black; */

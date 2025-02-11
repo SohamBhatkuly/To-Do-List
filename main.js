@@ -26,7 +26,6 @@ saveButton.addEventListener('click', () => {
     modal.style.display = 'none';
       document.body.style.position = '';
     document.body.style.width = '';
-
     display();
 })
 
